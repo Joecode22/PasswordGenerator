@@ -20,7 +20,8 @@ var generatedPassword = '';
 function promptLength() {
   selectedLength = prompt('Enter a desired password length between 8 and 128 characters?');
   // Validate the user input --> inform user the password must be <8 or >128, alert them, and start the function over if they enter an invalid number/character
-  if (selectedLength < 8 || selectedLength > 128) {
+  // also validate that the user entered a whole number
+  if ((selectedLength < 8 || selectedLength > 128) && selectedLength.isinteger() === true) {
     alert(selectedLength = 'Password length should be a whole number between 8 and 128');
     promptLength();
   }
