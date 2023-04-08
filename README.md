@@ -38,5 +38,6 @@ Below is a short video of the appearance and functionality of this application:
 There is no installation requirement
 
 ## Usage
+
 This project is deployed on github pages.
 Follow this link to view:
