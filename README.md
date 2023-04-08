@@ -46,3 +46,17 @@ Follow this link to view:
 
 This project assignment began with starter code provided from the following repository:
 <https://github.com/coding-boot-camp/friendly-parakeet>
+
+## License
+
+Please refer to the license section
+
+## Features
+
+Some key features of this application include:
+
+1. Clicking generate password button begins the process of collecting user preferences
+2. Prompts are used to collect user input for the password length, and criteria.
+3. Functional programming is used and logic is contained inside functions created for each task
+4. User input is validated
+5. Password is generated with the user specified criteria and displayed to the screen
