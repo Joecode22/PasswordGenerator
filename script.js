@@ -1,15 +1,18 @@
 // Password Generator
 // A Coding BootCamp Challenge
 // Joseph McKinney
+// 2023-04-03
 
 // Start of Code
+
+
 //* Variable Declarations
 // selected length of the password
 var selectedLength = 0;
 // array of lowercase letters, uppercase letters, numbers, and special characters
 var arrayLower = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var arrayUpper = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-var arrayNumbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
+var arrayNumbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
 var specialChar = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '='];
 // creates array of characters to pull from
 var largeCharacterArray = [];
@@ -18,6 +21,7 @@ var generatedPassword = '';
 
 //* Function that prompts for password length
 function promptLength() {
+  console.log('ding');
   selectedLength = prompt('Enter a desired password length between 8 and 128 characters?');
   // Validate the user input --> inform user the password must be <8 or >128, alert them, and start the function over if they enter an invalid number/character
 
@@ -30,15 +34,15 @@ function promptLength() {
 
 //* Function that collects the user's preferred criteria and builds part of the password
 function collectCriteria() {
+
   const userWantsLowerCase = confirm("Do you want lowercase characters?")
-  console.log(userWantsLowerCase)
-  console.log(typeof userWantsLowerCase)
   if (userWantsLowerCase) {
     console.log('user wants lowercase')
     generatedPassword += arrayLower[Math.floor(Math.random() * arrayLower.length)];
     largeCharacterArray = largeCharacterArray.concat(arrayLower);
     console.log(largeCharacterArray)
   }
+
   const userWantsUpperCase = confirm("Do you want uppercase characters?")
   if (userWantsUpperCase) {
     console.log('user wants uppercase')
@@ -46,6 +50,7 @@ function collectCriteria() {
     largeCharacterArray = largeCharacterArray.concat(arrayUpper);
     console.log(largeCharacterArray)
   }
+
   const userWantsNumbers = confirm("Do you want numbers?")
   if (userWantsNumbers) {
     console.log('user wants numbers')
@@ -53,6 +58,7 @@ function collectCriteria() {
     largeCharacterArray = largeCharacterArray.concat(arrayNumbers);
     console.log(largeCharacterArray)
   }
+
   const userWantsSpecialChar = confirm("Do you want special characters?")
   if (userWantsSpecialChar) {
     console.log('user wants special characters')
@@ -60,11 +66,10 @@ function collectCriteria() {
     largeCharacterArray = largeCharacterArray.concat(specialChar);
     console.log(largeCharacterArray)
   }
-
   // Validate that the user has chosen at least one character set
   if (userWantsLowerCase === false && userWantsUpperCase === false && userWantsNumbers === false && userWantsSpecialChar === false) {
     alert('You must select at least one character set');
-    collectCriteria();
+    collectCriteria();    
   }
 };
 
@@ -88,8 +93,9 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
-  //reset the variables
-  largeCharacterArray=[]
+
+  //* reset the variables
+  largeCharacterArray=[];
   selectedLength=0;
   generatedPassword=''
 }
