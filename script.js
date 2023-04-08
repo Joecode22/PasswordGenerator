@@ -77,7 +77,7 @@ function generatePassword() {
   return generatedPassword;
 }
 
-//* Gets references to the #generate element
+//* Gets references to the #generate element and stores it in a variable
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
@@ -88,7 +88,7 @@ function writePassword() {
   passwordText.value = password;
 }
 
-//* Event listener to generate button
+//* Event listener to generate button using the variable we created earlier
 generateBtn.addEventListener("click", writePassword);
 
 //END OF CODE
