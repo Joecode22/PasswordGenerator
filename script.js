@@ -5,7 +5,7 @@
 // Start of Code
 //* Variable Declarations
 // selected length of the password
-var selectedLength;
+var selectedLength = 0;
 // array of lowercase letters, uppercase letters, numbers, and special characters
 var arrayLower = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var arrayUpper = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
@@ -18,12 +18,11 @@ var generatedPassword = '';
 
 //* Function that prompts for password length
 function promptLength() {
-  selectedLength = prompt('Enter a desired password length between 8 and 128 characters?');
+  selectedLength = parseInt(prompt('Enter a desired password length between 8 and 128 characters?'));
   // Validate the user input --> inform user the password must be <8 or >128, alert them, and start the function over if they enter an invalid number/character
   // also validate that the user entered a whole number
-  if ((selectedLength < 8 || selectedLength > 128) && selectedLength.isinteger() === true) {
-    console.log(selectedLength.isinteger())
-    alert(selectedLength = 'Password length should be a whole number between 8 and 128');
+  if ((selectedLength < 8 || selectedLength > 128)) {
+    alert(selectedLength = 'Password length should be a number between 8 and 128');
     promptLength();
   }
   return selectedLength;
