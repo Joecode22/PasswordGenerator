@@ -1,9 +1,13 @@
 
 # PasswordGenerator
 
-## Create an application to generate a random password based on selected criteria.
+## Generates a random password based on selected criteria
 
 This module's Challenge requires you to create an application that an employee can use to generate a random password based on criteria they've selected. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished user interface that is responsive, ensuring that it adapts to multiple screen sizes. This module's coursework will teach you all the skills you need to succeed in this assignment. The password can include special characters. If you're unfamiliar with these, see this list of Password Special Characters from the OWASP Foundation.
+
+## Mock-Up / Appearance
+
+Below is a short video of the appearance and functionality of this application:
 
 ## User Story
 
@@ -28,3 +32,11 @@ This module's Challenge requires you to create an application that an employee c
 - THEN a password is generated that matches the selected criteria
 - WHEN the password is generated
 - THEN the password is either displayed in an alert or written to the page
+
+## Installation
+
+There is no installation requirement
+
+## Usage
+This project is deployed on github pages.
+Follow this link to view:
