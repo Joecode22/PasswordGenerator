@@ -27,14 +27,17 @@
 // Todo create psudocode: 
 // Need the following variables:
     // selected length of the password
+    var selectedLength;
     // array of lowercase letters
-    var arrayLower = [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]
+    var arrayLower = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
     // Create an array of uppercase letters
-    
-    
+    var arrayUpper = ['A','B','C','D','E','F','G','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
     // array of numbers
+    var arrayNumbers = ['1','2','3','4','5','6','7','8','9'];
     // array of special characters
+    var specialChar = ['!','@','#','$','%','^','&','*','(',')','-','='];
     // to hold the password we're building
+    var generatedPassword = '';
     // possibly the mega-array
 
   // prompt for password length --> stored in a variable
