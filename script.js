@@ -1,6 +1,8 @@
 // Password Generator
-// A Coding Bootcamp project by Joseph McKinney
+// A Coding BootCamp Challenge
+// Joseph McKinney
 
+// Start of Code
 //* Variable Declarations
 // selected length of the password
 var selectedLength;
@@ -64,7 +66,7 @@ function collectCriteria() {
   }
 };
 
-//Function that continues to generate the password
+//* Function that continues to generate the password
 function generatePassword() {
   promptLength();
   collectCriteria();
@@ -75,16 +77,18 @@ function generatePassword() {
   return generatedPassword;
 }
 
-// Get references to the #generate element
+//* Gets references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-// return the generated password
+//* Function that displays the generated password
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
 
-// Add event listener to generate button
+//* Event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+//END OF CODE
