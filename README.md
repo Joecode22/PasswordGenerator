@@ -8,7 +8,7 @@ This module's Challenge requires you to create an application that an employee c
 ## Mock-Up / Appearance
 
 Below is a short video of the appearance and functionality of this application:
-![Password Generator Application Behavior](https://github.com/Joecode22/PasswordGenerator/blob/main/app.mp4 "Password Generator Application Behavior")
+![Password Generator Application Behavior](https://github.com/Joecode22/PasswordGenerator/blob/main/app.gif "Password Generator Application Behavior")
 
 ## User Story
 
