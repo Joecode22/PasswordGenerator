@@ -18,36 +18,47 @@ var generatedPassword = '';
 
 //* Function that prompts for password length
 function promptLength() {
-  selectedLength = ('Enter a desired password length between 8 and 128 characters?');
+  selectedLength = prompt('Enter a desired password length between 8 and 128 characters?');
   // Validate the user input --> inform user the password must be <8 or >128, alert them, and start the function over if they enter an invalid number/character
-  // also validate that the user entered a whole number
+
   if ((selectedLength < 8 || selectedLength > 128)) {
-    alert(selectedLength = 'Password length should be a number between 8 and 128');
+    alert('Password length should be a number between 8 and 128');
     promptLength();
   }
   return selectedLength;
 }
+
 //* Function that collects the user's preferred criteria and builds part of the password
 function collectCriteria() {
   const userWantsLowerCase = confirm("Do you want lowercase characters?")
+  console.log(userWantsLowerCase)
+  console.log(typeof userWantsLowerCase)
   if (userWantsLowerCase) {
+    console.log('user wants lowercase')
     generatedPassword += arrayLower[Math.floor(Math.random() * arrayLower.length)];
     largeCharacterArray = largeCharacterArray.concat(arrayLower);
+    console.log(largeCharacterArray)
   }
   const userWantsUpperCase = confirm("Do you want uppercase characters?")
   if (userWantsUpperCase) {
+    console.log('user wants uppercase')
     generatedPassword += arrayUpper[Math.floor(Math.random() * arrayUpper.length)];
     largeCharacterArray = largeCharacterArray.concat(arrayUpper);
+    console.log(largeCharacterArray)
   }
   const userWantsNumbers = confirm("Do you want numbers?")
   if (userWantsNumbers) {
+    console.log('user wants numbers')
     generatedPassword += arrayNumbers[Math.floor(Math.random() * arrayNumbers.length)];
     largeCharacterArray = largeCharacterArray.concat(arrayNumbers);
+    console.log(largeCharacterArray)
   }
   const userWantsSpecialChar = confirm("Do you want special characters?")
   if (userWantsSpecialChar) {
+    console.log('user wants special characters')
     generatedPassword += specialChar[Math.floor(Math.random() * specialChar.length)];
     largeCharacterArray = largeCharacterArray.concat(specialChar);
+    console.log(largeCharacterArray)
   }
 
   // Validate that the user has chosen at least one character set
@@ -77,6 +88,10 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
+  //reset the variables
+  largeCharacterArray=[]
+  selectedLength=0;
+  generatedPassword=''
 }
 
 //* Event listener to generate button using the variable we created earlier
