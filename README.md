@@ -41,3 +41,8 @@ There is no installation requirement
 
 This project is deployed on github pages.
 Follow this link to view:
+
+## Credits
+
+This project assignment began with starter code provided from the following repository:
+<https://github.com/coding-boot-camp/friendly-parakeet>
