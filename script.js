@@ -1,6 +1,5 @@
-// Todo: THEN a password is generated that matches the selected criteria
-// WHEN the password is generated
-// THEN the password is either displayed in an alert or written to the page
+// Password Generator
+// A Coding Bootcamp project by Joseph McKinney
 
 //* Variable Declarations
 // selected length of the password
@@ -15,8 +14,7 @@ var largeCharacterArray = [];
 // to hold the password we're building
 var generatedPassword = '';
 
-
-// *function that prompts for password length
+//* Function that prompts for password length
 function promptLength() {
   selectedLength = prompt('Enter a desired password length between 8 and 128 characters?');
   // Validate the user input --> inform user the password must be <8 or >128, alert them, and start the function over if they enter an invalid number/character
@@ -26,41 +24,47 @@ function promptLength() {
   }
   return selectedLength;
 }
-//Create a function that collects the user's preferred criteria
+//* Function that collects the user's preferred criteria
+//also selects a random character from the selected criteria and adds it to the generated password
 function collectCriteria() {
-  
+
   if (confirm("Do you want lowercase characters?")) {
     var userWantsLowerCase = true;
+    //select a random character from the array and add it to the generated password
     generatedPassword += arrayLower[Math.floor(Math.random() * arrayLower.length)];
-    console.log(generatedPassword)
+    //add the array to the largeCharacterArray
     largeCharacterArray = largeCharacterArray.concat(arrayLower);
   }
   if (confirm("Do you want uppercase characters?")) {
     var userWantsUpperCase = true;
+    //select a random character from the array and add it to the generated password
     generatedPassword += arrayUpper[Math.floor(Math.random() * arrayUpper.length)];
-    console.log(generatedPassword)
+    //add the array to the largeCharacterArray
     largeCharacterArray = largeCharacterArray.concat(arrayUpper);
   }
   if (confirm("Do you want numbers?")) {
     var userWantsNumbers = true;
+    //select a random character from the array and add it to the generated password
     generatedPassword += arrayNumbers[Math.floor(Math.random() * arrayNumbers.length)];
-    console.log(generatedPassword)
+    //add the array to the largeCharacterArray
     largeCharacterArray = largeCharacterArray.concat(arrayNumbers);
   }
   if (confirm("Do you want special characters?")) {
     var userWantsSpecialChar = true;
+    //select a random character from the array and add it to the generated password
     generatedPassword += specialChar[Math.floor(Math.random() * specialChar.length)];
-    console.log(generatedPassword)
+    //add the array to the largeCharacterArray
     largeCharacterArray = largeCharacterArray.concat(specialChar);
   }
+
   // Validate that the user has chosen at least one character set
   if (userWantsLowerCase === false && userWantsUpperCase === false && userWantsNumbers === false && userWantsSpecialChar === false) {
     alert('You must select at least one character set');
     collectCriteria();
   }
 };
-//* Note There needs to be at least one of each selected character type included in the password
-// Todo: Write a function that Randomly generate a character from each character set as it's chosen and add it to the end of the password that you're building (.push() for an array or .concat() for a string)
+
+//Function that continues to generate the password
 function generatePassword() {
   promptLength();
   collectCriteria();
@@ -68,8 +72,9 @@ function generatePassword() {
   for (var i = generatedPassword.length; i < selectedLength; i++) {
     generatedPassword += largeCharacterArray[Math.floor(Math.random() * largeCharacterArray.length)];
   };
+  return generatedPassword;
 }
-  
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -78,9 +83,7 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
-  console.log('ding')
 }
 
 // Add event listener to generate button
