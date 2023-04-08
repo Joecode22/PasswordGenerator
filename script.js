@@ -8,7 +8,7 @@
 var selectedLength = 0;
 // array of lowercase letters, uppercase letters, numbers, and special characters
 var arrayLower = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-var arrayUpper = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+var arrayUpper = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 var arrayNumbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var specialChar = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '='];
 // creates array of characters to pull from
@@ -27,36 +27,26 @@ function promptLength() {
   }
   return selectedLength;
 }
-//* Function that collects the user's preferred criteria
-//also selects a random character from the selected criteria and adds it to the generated password
+//* Function that collects the user's preferred criteria and builds part of the password
 function collectCriteria() {
-
-  if (confirm("Do you want lowercase characters?")) {
-    var userWantsLowerCase = true;
-    //select a random character from the array and add it to the generated password
+  const userWantsLowerCase = confirm("Do you want lowercase characters?")
+  if (userWantsLowerCase) {
     generatedPassword += arrayLower[Math.floor(Math.random() * arrayLower.length)];
-    //add the array to the largeCharacterArray
     largeCharacterArray = largeCharacterArray.concat(arrayLower);
   }
-  if (confirm("Do you want uppercase characters?")) {
-    var userWantsUpperCase = true;
-    //select a random character from the array and add it to the generated password
+  const userWantsUpperCase = confirm("Do you want uppercase characters?")
+  if (userWantsUpperCase) {
     generatedPassword += arrayUpper[Math.floor(Math.random() * arrayUpper.length)];
-    //add the array to the largeCharacterArray
     largeCharacterArray = largeCharacterArray.concat(arrayUpper);
   }
-  if (confirm("Do you want numbers?")) {
-    var userWantsNumbers = true;
-    //select a random character from the array and add it to the generated password
+  const userWantsNumbers = confirm("Do you want numbers?")
+  if (userWantsNumbers) {
     generatedPassword += arrayNumbers[Math.floor(Math.random() * arrayNumbers.length)];
-    //add the array to the largeCharacterArray
     largeCharacterArray = largeCharacterArray.concat(arrayNumbers);
   }
-  if (confirm("Do you want special characters?")) {
-    var userWantsSpecialChar = true;
-    //select a random character from the array and add it to the generated password
+  const userWantsSpecialChar = confirm("Do you want special characters?")
+  if (userWantsSpecialChar) {
     generatedPassword += specialChar[Math.floor(Math.random() * specialChar.length)];
-    //add the array to the largeCharacterArray
     largeCharacterArray = largeCharacterArray.concat(specialChar);
   }
 
@@ -67,7 +57,7 @@ function collectCriteria() {
   }
 };
 
-//* Function that continues to generate the password
+//* Function that continues to generate the password by randomly selecting elements from the largeCharacterArray
 function generatePassword() {
   promptLength();
   collectCriteria();
