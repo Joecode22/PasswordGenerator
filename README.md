@@ -40,7 +40,7 @@ There is no installation requirement
 ## Usage
 
 This project is deployed on github pages.
-Follow this link to view:
+Follow this link to view: <https://joecode22.github.io/PasswordGenerator/>
 
 ## Credits
 
