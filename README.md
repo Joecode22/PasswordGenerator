@@ -47,6 +47,7 @@ Follow this link to view: <https://joecode22.github.io/PasswordGenerator/>
 
 This project assignment began with starter code provided from the following repository:
 <https://github.com/coding-boot-camp/friendly-parakeet>
+The README for this project incorporates text from the project challenge assignment README from class.
 
 ## License
 
